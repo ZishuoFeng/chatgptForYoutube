@@ -8,7 +8,7 @@ from youtube_transcript_api._errors import TranscriptsDisabled
 app = Flask(__name__)
 CORS(app)
 info_response = None
-openai.api_key = "Placeholder for OpenAI"
+openai.api_key = "Placeholder for OpenAI API"
 messages=[{"role": "system", "content": "You are a YouTube video analyzer"}] # Use this "messages" to store the context information
 
 # Wipe out the useless information to reduce the input token
@@ -24,7 +24,7 @@ def get_video_info():
     caption = ""
     try:
         if videoId:
-            API_KEY = "AIzaSyCiw74lqyjr6aglAlRBJkkhOkPmQwDJesI"
+            API_KEY = "Placeholder for Youtube API"
             info_url = f"https://www.googleapis.com/youtube/v3/videos?id={videoId}&key={API_KEY}&part=snippet,contentDetails,statistics,status"
             info_response = requests.get(info_url)
 
