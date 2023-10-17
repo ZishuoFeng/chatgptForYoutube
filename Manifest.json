@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "YouTube ChatGPT",
+  "version": "1.0",
+  "description": "Ask questions about the YouTube video you are watching",
+  "permissions": ["activeTab", "storage", "https://www.googleapis.com/"],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon/128.png"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  },
+  "icons": {
+    "16": "icon/128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/watch*"],
+      "js": ["content.js"]
+    }
+  ]
+}
